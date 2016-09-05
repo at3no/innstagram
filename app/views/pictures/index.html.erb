@@ -1,0 +1,25 @@
+<div class="container">
+<div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+
+<p><%= notice %></p>
+
+<h1>投稿一覧</h1>
+
+<p style="margin: 0 auto 20px auto;"><%= link_to "投稿する", new_picture_path, class: 'btn btn-default' %></p>
+
+<% @pictures.each do |picture| %>
+  <div class="row" style="margin-bottom: 20px;">
+  <p>名前：<%= picture.name %></p>
+  <p>写真：</p>
+  <p><%= picture.pic %></p>
+  <%= link_to "投稿を編集する", edit_picture_path(picture.id), data: { confirm: '本当に編集していいですか？' }, class: 'btn btn-default btn-sm btn-success' %>
+  <%= link_to "ブログを削除する", picture_path(picture), method: :delete, data: { confirm: '本当に削除していいですか？' }, class: 'btn btn-default btn-sm btn btn-danger' %>
+  </div>
+<% end %>
+
+</div>
+</div>
+
+<div id="page-top-btn" class="page-top-btn">
+    <p><a class="move-page-top" id="move-page-top">▲</a></p>
+</div>

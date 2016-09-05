@@ -1,0 +1,22 @@
+<div class="container">
+<div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+
+<h2>以下の内容で、送信する</h2>
+
+<%= form_for(@picture) do |f| %>
+<%= f.hidden_field :name %>
+<%= f.hidden_field :pic %>
+
+<p>名前：<%= @picture.name %></p>
+<p>画像：</p>
+<p><%= @picture.pic %></p>
+<%= f.submit '投稿する', class: 'btn btn-primary btn-block', style: 'margin-bottom: 20px' %>
+<% end %>
+
+<%= form_for(@picture, url: new_picture_path) do |f| %>
+<%= f.hidden_field :name %>
+<%= f.hidden_field :pic %>
+<%= f.submit "戻る", name: 'back', class: 'btn btn-default btn-block', style: 'margin-bottom: 20px' %>
+<% end %>
+</div>
+</div>
