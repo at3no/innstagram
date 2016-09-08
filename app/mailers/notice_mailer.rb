@@ -9,7 +9,7 @@ class NoticeMailer < ApplicationMailer
     #@greeting = "Hi"
     @picture = picture
 
-    mmail to: "ayamanou@gmail.com",
+    mail to: "ayamanou@gmail.com",
       subject: '【Innstagram】投稿されました'
   end
 end
